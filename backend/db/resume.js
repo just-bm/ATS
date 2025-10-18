@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const schema = new mongoose.Schema({
-    _id:{type:Number, required:true},
-    user_id: {type: mongoose.Schema.Types.ObjectId, ref:"User", required:true},
+    // _id:{type:Number, required:true},
+    _id: {type: mongoose.Schema.Types.ObjectId, ref:"user", required:true},
     originalFileName: {type:String, required:true},
     history: [
         {

@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const resume = require('./db/resume');
 const user = require('./db/user')
 const userRouter = require('./Routes/userRoute');
+const historyRouter = require('./Routes/historyRoutes')
 require('dotenv').config();
 const app = express();
 app.use(express.json());
 app.use('/api/auth', userRouter);
-
+app.use('/api', historyRouter);
 try{
     mongoose.connect(process.env.MONGODB_URL)
     console.log("connected successfully");
