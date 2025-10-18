@@ -4,6 +4,19 @@ const resume = require('./db/resume');
 const user = require('./db/user')
 const userRouter = require('./Routes/userRoute');
 const historyRouter = require('./Routes/historyRoutes')
+const multer = require('multer');
+const pdf = require('pdf-parse');
+const fs = require('fs');
+
+
+
+
+
+
+
+
+
+
 require('dotenv').config();
 const app = express();
 app.use(express.json());
