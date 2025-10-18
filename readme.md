@@ -1,8 +1,8 @@
-# Resume ATS Analyzer 🔍
+# Resume ATS Analyzer 
 
 A full-stack MERN application that uses AI to analyze resumes and provide ATS (Applicant Tracking System) compatibility scores with personalized feedback.
 
-## 🚀 Features
+## Features
 
 - **User Authentication** - Secure signup/login with JWT
 - **PDF Resume Analysis** - Upload and extract text from PDF resumes
@@ -11,7 +11,7 @@ A full-stack MERN application that uses AI to analyze resumes and provide ATS (A
 - **Analysis History** - Track all previous resume analyses
 - **Secure File Handling** - Protected file upload and storage
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React** - UI framework
@@ -34,7 +34,7 @@ A full-stack MERN application that uses AI to analyze resumes and provide ATS (A
 - **Cloud Storage** (Optional) - File storage
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -102,7 +102,7 @@ A full-stack MERN application that uses AI to analyze resumes and provide ATS (A
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:5000
 
-## 📋 Usage
+## Usage
 
 1. **Register/Login** - Create an account or login
 2. **Upload Resume** - Go to dashboard and upload PDF resume
@@ -110,7 +110,7 @@ A full-stack MERN application that uses AI to analyze resumes and provide ATS (A
 4. **Check History** - View all previous analyses
 5. **Improve Resume** - Use feedback to optimize your resume
 
-## 🔒 Security Features
+## Security Features
 
 - Password hashing with bcrypt
 - JWT token authentication
@@ -118,7 +118,7 @@ A full-stack MERN application that uses AI to analyze resumes and provide ATS (A
 - File upload validation
 - Secure AI API key storage
 
-## 🛠 Development
+## Development
 
 ### Adding New Features
 1. Create backend API route
@@ -134,7 +134,7 @@ A full-stack MERN application that uses AI to analyze resumes and provide ATS (A
 4. Process response → Save to database
 5. Return analysis → Frontend display
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -142,11 +142,8 @@ A full-stack MERN application that uses AI to analyze resumes and provide ATS (A
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 - **PDF upload fails**: Check multer configuration and file size limits
@@ -159,7 +156,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Create a new issue with detailed description
 - Include error logs and steps to reproduce
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - [ ] Multiple resume templates
 - [ ] Job description matching
