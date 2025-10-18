@@ -4,7 +4,7 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
+require('dotenv').config();
 
 router.post('/signup', async(req, res)=>{
     try{
@@ -42,7 +42,7 @@ router.post('/login', async (req, res)=>{
         const user = await User.findOne({email});
         const isMatch = await bcrypt.compare(password, user.password);
         if(!isMatch) return res.status(400).json({error:"invalid creditials"});
-        const token = jwt.sign({userId:user.id},"jwtsecretkey",{expiresIn:'7d'});
+        const token = jwt.sign({userId:user.id},process.env.JWT_SECRET,{expiresIn:'7d'});
         console.log(token);
         res.json({token, user})
     }catch(error){
