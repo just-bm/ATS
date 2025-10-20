@@ -9,7 +9,8 @@ export default function Dashbard(){
     const [extracted, setExtract] = useState("");
     const [yoe, setYoe] = useState("");
     const [file, setFile] = useState(null);
-    const [data, setData] = useState("");
+    const [data, setData] = useState(null);
+    const [array, setarray] = useState([]);
 
     const handlePDF = (e) => {
         const selectedFile = e.target.files[0];
@@ -48,15 +49,19 @@ export default function Dashbard(){
             alert("please upload a file");
             return
         }
-        const formData = new FormData();
-        formData.append("Titles",jobTitles);
-        formData.append("Description",jobDescription);
-        formData.append("Expericence",yoe);
-        formData.append("Extracted",extracted);
+        const formData = {};
+        formData["Titles"]=jobTitles;
+        formData["Description"]=jobDescription;
+        formData["Expericence"]=yoe;
+        formData["Extracted"]=extracted;
 
-        const res = await axios.post('http://localhost:5000/api/upload', formData ,{headers:{ 'Content-Type': 'multipart/form-data' }});
+        const res = await axios.post('http://localhost:5000/api/upload', formData );
             
-        setData(res);
+        setData(res.data);
+        console.log(res.data);
+        // array.push(res.data);
+         setarray(prev => [...prev, res.data]);
+
     }
 
 
@@ -83,19 +88,37 @@ export default function Dashbard(){
                     {/* <label></label> */}
                     <input type="file" accept=".pdf" onChange={handlePDF}/>
                     <button type="submit" onClick={sendBackend}>submit</button>
-                    {data}
+                    {/* {data} */}
                 </form>
+
+            {array.length > 0 && (
+          <div className="response-section">
+            <h3>AI Result:</h3>
+            {array.map((d, index) => (
+              <div key={index}>
+                <p><strong>Score:</strong> {d.score}</p>
+                <p><strong>Strength:</strong> {d.Strength.length>0?d.Strength.join(", "):"None"}</p>
+                <p><strong>Missing Keywords:</strong> {
+                (d.Missing_keywords.length) >0?
+                d.Missing_keywords.join(", "):("None")}</p>
+                <p><strong>Suggestions:</strong> {d.Suggestions.lenght>0?d.Suggestions.join("\n"):"None"}</p>
+                <hr />
+              </div>
+            ))}
+            </div>
+           ) }
+                   
+                </div>
+
+
+
+
             </div>
 
 
 
 
-
-
-
-
-
-        </div>
+            
         </>
     )
 }

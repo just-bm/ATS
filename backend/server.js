@@ -8,9 +8,9 @@ const multer = require('multer');
 const pdf = require('pdf-parse');
 const fs = require('fs');
 const cors = require('cors');
+const processing = require('./Routes/processInfo');
 
-
-const pdfParse = require('./pdfparser');
+// const pdfParse = require('./pdfparser');
 
 
 
@@ -23,7 +23,8 @@ app.use(cors());
 
 app.use('/api/auth', userRouter);
 app.use('/api', historyRouter);
-app.use('/api', pdfParse);
+// app.use('/api', pdfParse);
+app.use('/api',processing);
 try{
     mongoose.connect(process.env.MONGODB_URL)
     console.log("connected successfully");
