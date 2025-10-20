@@ -10,7 +10,7 @@ const fs = require('fs');
 const cors = require('cors');
 
 
-
+const pdfParse = require('./pdfparser');
 
 
 
@@ -23,7 +23,7 @@ app.use(cors());
 
 app.use('/api/auth', userRouter);
 app.use('/api', historyRouter);
-
+app.use('/api', pdfParse);
 try{
     mongoose.connect(process.env.MONGODB_URL)
     console.log("connected successfully");

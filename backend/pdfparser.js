@@ -5,7 +5,8 @@ const fs = require('fs');
 const router = express.Router();
 const upload = multer({dest:'uploads/'});
 
-router.post('/api/upload', upload.single('pdfFile'), async(req, res)=>{
+router.post('/upload', upload.single('file'), async(req, res)=>{
+    
     if(!req.file){
         return res.status(400).json({error:"what is wrong with you, upload a pdf bro...."});
     }
@@ -23,4 +24,7 @@ router.post('/api/upload', upload.single('pdfFile'), async(req, res)=>{
         console.error('Error parsing PDF:', error);
         res.status(500).send('Error parsing PDF.');
     }
+    console.log("lsdfdjfd")
 })
+
+module.exports = router;

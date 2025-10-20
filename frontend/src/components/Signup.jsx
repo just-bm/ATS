@@ -39,7 +39,7 @@ const Signup = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      navigate("/movies"); // redirect after successful signup
+      navigate("/dashboard"); // redirect after successful signup
     } catch (err) {
       setError(err.response?.data?.error || "Error signing up");
     } finally {

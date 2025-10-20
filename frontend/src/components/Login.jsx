@@ -23,7 +23,7 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      navigate("/movies");
+      navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.error || "Error logging in");
     } finally {
