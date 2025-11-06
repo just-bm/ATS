@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api/auth', userRouter);
-app.use('/api', historyRouter);
+// app.use('/api', historyRouter);
 // app.use('/api', pdfParse);
 app.use('/api',processing);
 try{
