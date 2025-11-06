@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 import './index.css'
 
 import Dashbard from './components/Dashboard'
+import Home from './components/Home'
 // import History from './components/History'
 // import Login from './components/Login'
 // import Signup from './components/Signup'
@@ -16,8 +17,8 @@ function App() {
     <>
     <BrowserRouter>
     <Routes>
-      {/* <Route element={< Login/>} path='/login'/>
-      <Route element={< Signup/>} path='/signup'/> */}
+      <Route element={< Home/>} path='/'/>
+    {/*   <Route element={< Signup/>} path='/signup'/> */}
       <Route element={< Dashbard/>} path='/dashboard'/>
       {/* <Route element={< History/>} path='/history'/> */}
       {/* <Route element={< Login/>} path='/login'/> */}
