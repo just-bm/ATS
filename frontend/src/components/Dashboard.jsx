@@ -43,7 +43,7 @@ export default function Dashboard() {
             formData["Extracted"]=extracted;
             console.log("form data is \n", formData);
 
-            const res = await axios.post('http://localhost:5000/api/upload', formData );
+            const res = await axios.post('https://ats-2rss.onrender.com/api/upload', formData );
             
             setData(res.data);
             console.log(res.data);
